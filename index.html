@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FARHAN | Cyber Security Specialist</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 50% 15%, rgba(0,255,173,0.12), transparent 32%),
+                #040706;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0,255,173,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,173,0.025) 1px, transparent 1px);
+            background-size: 45px 45px;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            padding: 25px 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card {
+            text-align: center;
+            padding: 55px 30px;
+            border-radius: 30px;
+            background: rgba(8, 14, 12, 0.78);
+            border: 1px solid rgba(0,255,173,0.20);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow:
+                0 0 80px rgba(0,255,173,0.07),
+                inset 0 0 40px rgba(255,255,255,0.015);
+            animation: fadeIn 1s ease;
+        }
+
+        /* PROFILE IMAGE */
+        .profile-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+            padding: 5px;
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #00ffad,
+                #008f70,
+                #00ffad
+            );
+
+            box-shadow:
+                0 0 25px rgba(0,255,173,0.35),
+                0 0 70px rgba(0,255,173,0.12);
+
+            animation: glow 3s infinite alternate;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #07100d;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(42px, 8vw, 70px);
+            letter-spacing: 6px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            color: #00ffad;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 16px;
+            margin-bottom: 28px;
+            border-radius: 30px;
+            color: #b8c6c0;
+            font-size: 13px;
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ffad;
+            box-shadow: 0 0 12px #00ffad;
+            animation: pulse 1.8s infinite;
+        }
+
+        .bio {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            color: #aebbb5;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .contact-title {
+            color: #68736e;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact {
+            min-width: 135px;
+            padding: 14px 19px;
+            border-radius: 13px;
+            text-decoration: none;
+            color: #dce6e1;
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.09);
+            transition: 0.3s ease;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .contact:hover {
+            color: #00ffad;
+            border-color: rgba(0,255,173,0.45);
+            background: rgba(0,255,173,0.06);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,255,173,0.09);
+        }
+
+        footer {
+            margin-top: 35px;
+            color: #4f5955;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(0,255,173,0.25);
+            }
+
+            to {
+                box-shadow:
+                    0 0 35px rgba(0,255,173,0.45),
+                    0 0 80px rgba(0,255,173,0.10);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.35;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 45px 18px;
+                border-radius: 23px;
+            }
+
+            .profile-wrapper {
+                width: 125px;
+                height: 125px;
+            }
+
+            h1 {
+                font-size: 42px;
+                letter-spacing: 4px;
+            }
+
+            .title {
+                font-size: 15px;
+                letter-spacing: 1.5px;
+            }
+
+            .bio {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .contacts {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="card">
+
+            <!-- PROFILE PICTURE -->
+            <!-- Upload your photo to GitHub as "profile.png" -->
+
+            <div class="profile-wrapper">
+                <img
+                    src="profile.png"
+                    alt="FARHAN Profile Picture"
+                    class="profile">
+            </div>
+
+            <h1>FARHAN</h1>
+
+            <div class="title">
+                Cyber Security Specialist
+            </div>
+
+            <div class="status">
+                <span class="dot"></span>
+                Focused on Digital Security
+            </div>
+
+            <p class="bio">
+                I am a Cyber Security Specialist passionate about protecting
+                digital systems and helping organizations stay secure.
+            </p>
+
+            <div class="contact-title">
+                Contact Me
+            </div>
+
+            <div class="contacts">
+
+                <a
+                    class="contact"
+                    href="https://wa.me/8801648490740"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    WhatsApp
+                </a>
+
+                <a
+                    class="contact"
+                    href="https://instagram.com/farhan_jts"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Instagram
+                </a>
+
+                <a
+                    class="contact"
+                    href="https://facebook.com/Farhan.Jts.Official"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Facebook
+                </a>
+
+                <a
+                    class="contact"
+                    href="mailto:farhanjts30@gmail.com">
+                    Email
+                </a>
+
+            </div>
+
+            <footer>
+                © 2026 FARHAN. All rights reserved.
+            </footer>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
